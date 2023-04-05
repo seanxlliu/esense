@@ -455,10 +455,45 @@
   dependencies:
     tslib "^2.4.0"
 
+"@tanstack/query-core@4.27.0":
+  version "4.27.0"
+  resolved "https://registry.npmmirror.com/@tanstack/query-core/-/query-core-4.27.0.tgz#96bcef499008ea080b66611d029655e3ffdf8bea"
+  integrity sha512-sm+QncWaPmM73IPwFlmWSKPqjdTXZeFf/7aEmWh00z7yl2FjqophPt0dE1EHW9P1giMC5rMviv7OUbSDmWzXXA==
+
+"@tanstack/react-query@^4.28.0":
+  version "4.28.0"
+  resolved "https://registry.npmmirror.com/@tanstack/react-query/-/react-query-4.28.0.tgz#01cb9969b15cbcbd5dcfcd4b264dc18ef0a35f86"
+  integrity sha512-8cGBV5300RHlvYdS4ea+G1JcZIt5CIuprXYFnsWggkmGoC0b5JaqG0fIX3qwDL9PTNkKvG76NGThIWbpXivMrQ==
+  dependencies:
+    "@tanstack/query-core" "4.27.0"
+    use-sync-external-store "^1.2.0"
+
 "@tootallnate/once@2":
   version "2.0.0"
   resolved "https://registry.npmmirror.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
+
+"@trpc/client@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.npmmirror.com/@trpc/client/-/client-10.18.0.tgz#02d03ed47e34d6b8a3d3ee0e1f11e6074c2ece18"
+  integrity sha512-2d+6r2C/xygTjDWX9jT66defgHzbQP0Z8vrvyT3XtPjqU6JNlRNuS2ZtB8xDPdOQUUVnndzZ43BMr+Zu49K0OQ==
+
+"@trpc/next@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.npmmirror.com/@trpc/next/-/next-10.18.0.tgz#033585a415077285ac276124837944b734ccf6f0"
+  integrity sha512-GftAMy3K9AEATmsVTdc5zhCTLzSYpZ9bene7+sTlCF7QX/AMxIsd0ZUFrRnF6yg3jnxN+SvdNcF9IXeETXtGUw==
+  dependencies:
+    react-ssr-prepass "^1.5.0"
+
+"@trpc/react-query@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.npmmirror.com/@trpc/react-query/-/react-query-10.18.0.tgz#ad56989587c4a7d3c6b4769f5c1df0e5ad3154d5"
+  integrity sha512-5IxlvBh+KY/zOYCekBXzZUHtOrURQyXNnpQg9ZlEZTiyZmivGjIyH2VQIsFsGrK8IU99GAmIReQCw6uWgQrEcQ==
+
+"@trpc/server@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.npmmirror.com/@trpc/server/-/server-10.18.0.tgz#3e3de21d4f66e86a20a5175a0d193d687d75a17c"
+  integrity sha512-nVMqdDIF9YLOeC3g6RdAvdCPqkHFjpshSqZGThZ+fyjiWSUXj2ZKCduhJFnY77TjtgODojeaaghmzcnjxb+Onw==
 
 "@ts-morph/common@~0.17.0":
   version "0.17.0"
@@ -3562,6 +3597,11 @@ react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.npmmirror.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-ssr-prepass@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.npmmirror.com/react-ssr-prepass/-/react-ssr-prepass-1.5.0.tgz#bc4ca7fcb52365e6aea11cc254a3d1bdcbd030c5"
+  integrity sha512-yFNHrlVEReVYKsLI5lF05tZoHveA5pGzjFbFJY/3pOqqjGOmMmqx83N4hIjN2n6E1AOa+eQEUxs3CgRnPmT0RQ==
 
 react@18.2.0:
   version "18.2.0"
