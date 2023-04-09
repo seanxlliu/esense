@@ -2,7 +2,11 @@ import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import type { PrismaClient } from '@prisma/client';
 import { compare } from 'bcryptjs';
 import type { GetServerSidePropsContext } from 'next';
-import NextAuth, { getServerSession, type DefaultSession, type NextAuthOptions } from 'next-auth';
+import NextAuth, {
+  getServerSession,
+  type DefaultSession,
+  type NextAuthOptions
+} from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { prisma } from './db';
 /**
@@ -13,11 +17,11 @@ import { prisma } from './db';
  * @see https://next-auth.js.org/getting-started/typescript#module-augmentation
  **/
 declare module 'next-auth' {
-    interface Session extends DefaultSession {
-        user: {
-            id: string;
-        } & DefaultSession['user'];
-    }
+  interface Session extends DefaultSession {
+    user: {
+      id: string;
+    } & DefaultSession['user'];
+  }
 }
 
 /**
@@ -27,46 +31,50 @@ declare module 'next-auth' {
  * @see https://next-auth.js.org/configuration/options
  **/
 export const authOptions: NextAuthOptions = {
-    session: {
-        strategy: 'jwt',
-    },
-    // Include user.id on session
-    callbacks: {
-        session({ session, token }) {
-            if (session.user) {
-                session.user.id = token.sub!;
-            }
-            return session;
-        },
-    },
-    // Configure one or more authentication providers
-    adapter: PrismaAdapter(prisma),
-    providers: [
-        CredentialsProvider({
-            credentials: {
-                email: { type: 'email' },
-                password: { type: 'password' },
-            },
-            authorize: authorize(prisma),
-        }),
-    ],
+  session: {
+    strategy: 'jwt'
+  },
+  // Include user.id on session
+  callbacks: {
+    session({ session, token }) {
+      if (session.user) {
+        session.user.id = token.sub as string;
+      }
+      return session;
+    }
+  },
+  // Configure one or more authentication providers
+  adapter: PrismaAdapter(prisma),
+  providers: [
+    CredentialsProvider({
+      credentials: {
+        email: { type: 'email' },
+        password: { type: 'password' }
+      },
+      authorize: authorize(prisma)
+    })
+  ]
 };
 
 function authorize(prisma: PrismaClient) {
-    return async (credentials: Record<'email' | 'password', string> | undefined) => {
-        if (!credentials) throw new Error('Missing credentials');
-        if (!credentials.email) throw new Error('"email" is required in credentials');
-        if (!credentials.password) throw new Error('"password" is required in credentials');
-        const maybeUser = await prisma.user.findFirst({
-            where: { email: credentials.email },
-            select: { id: true, email: true, password: true },
-        });
-        if (!maybeUser || !maybeUser.password) return null;
-        // verify the input password with stored hash
-        const isValid = await compare(credentials.password, maybeUser.password);
-        if (!isValid) return null;
-        return { id: maybeUser.id, email: maybeUser.email };
-    };
+  return async (
+    credentials: Record<'email' | 'password', string> | undefined
+  ) => {
+    if (!credentials) throw new Error('Missing credentials');
+    if (!credentials.email)
+      throw new Error('"email" is required in credentials');
+    if (!credentials.password)
+      throw new Error('"password" is required in credentials');
+    const maybeUser = await prisma.user.findFirst({
+      where: { email: credentials.email },
+      select: { id: true, email: true, password: true }
+    });
+    if (!maybeUser || !maybeUser.password) return null;
+    // verify the input password with stored hash
+    const isValid = await compare(credentials.password, maybeUser.password);
+    if (!isValid) return null;
+    return { id: maybeUser.id, email: maybeUser.email };
+  };
 }
 
 /**
@@ -76,10 +84,10 @@ function authorize(prisma: PrismaClient) {
  * @see https://next-auth.js.org/configuration/nextjs
  **/
 export const getServerAuthSession = (ctx: {
-    req: GetServerSidePropsContext['req'];
-    res: GetServerSidePropsContext['res'];
+  req: GetServerSidePropsContext['req'];
+  res: GetServerSidePropsContext['res'];
 }) => {
-    return getServerSession(ctx.req, ctx.res, authOptions);
+  return getServerSession(ctx.req, ctx.res, authOptions);
 };
 
 export default NextAuth(authOptions);

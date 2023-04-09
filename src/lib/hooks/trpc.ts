@@ -21,7 +21,7 @@ function getBaseUrl() {
 }
 
 export const trpc = createTRPCNext<AppRouter>({
-  config({ ctx }) {
+  config({ ctx: _ctx }) {
     return {
       links: [
         httpBatchLink({
@@ -29,7 +29,7 @@ export const trpc = createTRPCNext<AppRouter>({
            * If you want to use SSR, you need to use the server's full URL
            * @link https://trpc.io/docs/ssr
            **/
-          url: `${getBaseUrl()}/api/trpc`,
+          url: `${getBaseUrl()}/api/trpc`
 
           // You can pass any HTTP headers you wish here
           // async headers() {
@@ -37,16 +37,18 @@ export const trpc = createTRPCNext<AppRouter>({
           //     authorization: '',
           //   };
           // },
-        }),
-      ],
+        })
+      ]
     };
   },
   /**
    * @link https://trpc.io/docs/ssr
    **/
-  ssr: false,
+  ssr: false
 });
 
-export function isTRPCClientError(error: unknown): error is TRPCClientError<AppRouter> {
+export function isTRPCClientError(
+  error: unknown
+): error is TRPCClientError<AppRouter> {
   return error instanceof TRPCClientError;
 }

@@ -1,11 +1,11 @@
-import type { PlasmoCSConfig } from "plasmo"
+import type { PlasmoCSConfig } from 'plasmo';
 import { createPortal } from 'react-dom';
 import AppContent from '../modules/app';
 
 export const config: PlasmoCSConfig = {
-  matches: ["https://www.amazon.com/*"],
+  matches: ['https://www.amazon.com/*'],
   all_frames: true
-}
+};
 
 const name = 'esene-extension-container';
 

@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 
 import { fetchGetReviews, fetchGetReviewsOverview } from '../apis';
 import { getAsin } from '~utils';
-import { log } from 'console';
-import { comment } from 'postcss';
+// import { log } from 'console';
+// import { comment } from 'postcss';
 
 // import { transformReviewOverviewFromString } from './utils/parser';
 // import { DATA_REVIEW_OVERVIEW } from './data-samples/review-overview';
@@ -23,10 +23,10 @@ const AppContent = () => {
     // serOverview(res);
     // return;
     fetchGetReviewsOverview({ asin: getAsin() as string })
-      .then((res) => {
+      .then(res => {
         serOverview(res);
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
       });
   };
@@ -47,7 +47,7 @@ const AppContent = () => {
       <div>Asin: {getAsin()}</div>
       <div>Ratings: {overview.ratings}</div>
       <div>Reviews: {overview.reviews}</div>
-      <Button size="small" variant="contained" onClick={ handleComments }>
+      <Button size="small" variant="contained" onClick={handleComments}>
         {/* {chrome.i18n.getMessage('esense_content_reviews')} */}
         分析评论
       </Button>

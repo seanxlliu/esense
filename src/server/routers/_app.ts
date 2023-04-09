@@ -5,14 +5,14 @@ export const appRouter = router({
   ping: procedure
     .input(
       z.object({
-        text: z.string(),
-      }),
+        text: z.string()
+      })
     )
     .query(({ input }) => {
       return {
-        res: input.text === 'ping' ? new Date().toLocaleTimeString() : 'err',
+        res: input.text === 'ping' ? new Date().toLocaleTimeString() : 'err'
       };
-    }),
+    })
 });
 
 // export type definition of API

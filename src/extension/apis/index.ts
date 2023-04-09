@@ -25,13 +25,13 @@ export const fetchGetReviewsOverview = ({ asin }: GetReviewsOverviewParams) => {
       method: 'GET'
     }
   )
-    .then((rb) => {
+    .then(rb => {
       if (rb.status !== 200 || !rb.body) {
         throw new Error('fetchGetReviewsOverview failed');
       }
       return transformStreamToString(rb.body);
     })
-    .then((res) => {
+    .then(res => {
       return transformReviewOverviewFromString(res);
     });
 };
@@ -62,13 +62,13 @@ export const fetchGetReviews = ({ asin, pageNumber }: GetReviewsParams) => {
       body: paramstring
     }
   )
-    .then((rb) => {
+    .then(rb => {
       if (rb.status !== 200 || !rb.body) {
         throw new Error('fetchGetReviews failed');
       }
       return transformStreamToString(rb.body);
     })
-    .then((res) => {
+    .then(res => {
       return transformReviewsFromString(res);
     });
 };
