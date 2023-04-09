@@ -2,7 +2,7 @@ import { type NextPage } from 'next';
 import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import Router from 'next/router';
-import { trpc } from '~/lib/hooks/trpc';
+import { trpc } from '~lib/hooks/trpc';
 
 type AuthUser = { id: string; email?: string | null };
 

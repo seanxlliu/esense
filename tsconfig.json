@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "checkJs": true,
     "skipLibCheck": true,
@@ -16,12 +20,16 @@
     "jsx": "preserve",
     "incremental": true,
     "noUncheckedIndexedAccess": true,
+    "noUnusedParameters": false,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"]
+      "~*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
+    ".plasmo/index.d.ts",
     ".eslintrc.cjs",
     "next-env.d.ts",
     "**/*.ts",
@@ -29,5 +37,7 @@
     "**/*.cjs",
     "**/*.mjs"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -17,6 +17,9 @@
 /out/
 next-env.d.ts
 
+# plasmo
+/.plasmo
+
 # production
 /build
 
@@ -40,3 +43,5 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+.vscode
