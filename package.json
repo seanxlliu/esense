@@ -11,7 +11,8 @@
     "dev:plasmo": "plasmo dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier --write --list-different --cache \"**/*.{ts,tsx}\""
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -45,6 +46,10 @@
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-prettier": "4.2.1",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.36.0",
     "eslint-config-next": "^13.2.4",
