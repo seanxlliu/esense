@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import Button from '@mui/material/Button';
 import { useEffect, useState } from 'react';
 
@@ -48,8 +50,7 @@ const AppContent = () => {
       <div>Ratings: {overview.ratings}</div>
       <div>Reviews: {overview.reviews}</div>
       <Button size="small" variant="contained" onClick={handleComments}>
-        {/* {chrome.i18n.getMessage('esense_content_reviews')} */}
-        分析评论
+        {chrome.i18n.getMessage('esense_content_reviews_analysis')}
       </Button>
     </div>
   );

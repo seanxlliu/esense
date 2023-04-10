@@ -2173,6 +2173,14 @@
   resolved "https://registry.npmmirror.com/@types/bcryptjs/-/bcryptjs-2.4.2.tgz#e3530eac9dd136bfdfb0e43df2c4c5ce1f77dfae"
   integrity sha512-LiMQ6EOPob/4yUL66SZzu6Yh77cbzJFYll+ZfaPiPPFswtIlA/Fs1MzdKYA7JApHU49zQTbJGX3PDmCpIdDBRQ==
 
+"@types/chrome@^0.0.228":
+  version "0.0.228"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.228.tgz#e507fe23ecbc7369774520255c1b7011b30ceced"
+  integrity sha512-rDmyVEF+l9H+6FQYqsEGqQOjBw/uaSx6KJ6o47FwbQmPPcskmt8XlPbKjy5KeQXU3ZLiV2x45Fk4kdtRMSghfQ==
+  dependencies:
+    "@types/filesystem" "*"
+    "@types/har-format" "*"
+
 "@types/cross-spawn@6.0.2":
   version "6.0.2"
   resolved "https://registry.npmmirror.com/@types/cross-spawn/-/cross-spawn-6.0.2.tgz#168309de311cd30a2b8ae720de6475c2fbf33ac7"
@@ -2199,6 +2207,23 @@
   version "1.0.0"
   resolved "https://registry.npmmirror.com/@types/estree/-/estree-1.0.0.tgz#5fb2e536c1ae9bf35366eed879e827fa59ca41c2"
   integrity sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==
+
+"@types/filesystem@*":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@types/filesystem/-/filesystem-0.0.32.tgz#307df7cc084a2293c3c1a31151b178063e0a8edf"
+  integrity sha512-Yuf4jR5YYMR2DVgwuCiP11s0xuVRyPKmz8vo6HBY3CGdeMj8af93CFZX+T82+VD1+UqHOxTq31lO7MI7lepBtQ==
+  dependencies:
+    "@types/filewriter" "*"
+
+"@types/filewriter@*":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@types/filewriter/-/filewriter-0.0.29.tgz#a48795ecadf957f6c0d10e0c34af86c098fa5bee"
+  integrity sha512-BsPXH/irW0ht0Ji6iw/jJaK8Lj3FJemon2gvEqHKpCdDCeemHa+rI3WBGq5z7cDMZgoLjY40oninGxqk+8NzNQ==
+
+"@types/har-format@*":
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/@types/har-format/-/har-format-1.2.10.tgz#7b4e1e0ada4d17684ac3b05d601a4871cfab11fc"
+  integrity sha512-o0J30wqycjF5miWDKYKKzzOU1ZTLuA42HZ4HE7/zqTOc/jTLdQ5NhYWvsRQo45Nfi1KHoRdNhteSI4BAxTF1Pg==
 
 "@types/http-cache-semantics@^4.0.1":
   version "4.0.1"
