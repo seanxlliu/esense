@@ -3,8 +3,10 @@
 import Button from '@mui/material/Button';
 import { useEffect, useState } from 'react';
 
-import { fetchGetReviews, fetchGetReviewsOverview } from '../apis';
+import { fetchGetReviews, fetchGetReviewsOverview } from '../../apis';
 import { getAsin } from '~utils';
+
+import { AmazonSlotApp } from './app.style';
 // import { log } from 'console';
 // import { comment } from 'postcss';
 
@@ -45,14 +47,14 @@ const AppContent = () => {
     console.log(res);
   };
   return (
-    <div className="amazon-slot-app">
+    <AmazonSlotApp>
       <div>Asin: {getAsin()}</div>
       <div>Ratings: {overview.ratings}</div>
       <div>Reviews: {overview.reviews}</div>
       <Button size="small" variant="contained" onClick={handleComments}>
         {chrome.i18n.getMessage('esense_content_reviews_analysis')}
       </Button>
-    </div>
+    </AmazonSlotApp>
   );
 };
 

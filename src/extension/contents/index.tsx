@@ -1,9 +1,9 @@
 import type { PlasmoCSConfig } from 'plasmo';
 import { createPortal } from 'react-dom';
-import AppContent from '../modules/app';
+import AppContent from '../modules/dp-slot/app';
 
 export const config: PlasmoCSConfig = {
-  matches: ['https://www.amazon.com/*'],
+  matches: ['https://www.amazon.com/*', 'http://localhost:82/*'],
   all_frames: true
 };
 
