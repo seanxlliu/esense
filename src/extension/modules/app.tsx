@@ -41,6 +41,7 @@ const AppContent = () => {
     };
     const res = await fetchGetReviews(params);
     console.log(res);
+
   };
   return (
     <div className="amazon-slot-app">
@@ -49,7 +50,7 @@ const AppContent = () => {
       <div>Reviews: {overview.reviews}</div>
       <Button size="small" variant="contained" onClick={ handleComments }>
         {/* {chrome.i18n.getMessage('esense_content_reviews')} */}
-        分析评论
+        分析评论1
       </Button>
     </div>
   );
