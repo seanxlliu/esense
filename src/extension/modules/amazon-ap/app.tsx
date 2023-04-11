@@ -17,7 +17,7 @@ interface OverviewModel {
   reviews?: number;
 }
 
-const AppContent = () => {
+const AmazonDp = () => {
   const [overview, serOverview] = useState<OverviewModel>({});
 
   const initialize = () => {
@@ -56,4 +56,4 @@ const AppContent = () => {
   );
 };
 
-export default AppContent;
+export default AmazonDp;
