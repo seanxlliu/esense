@@ -41,7 +41,8 @@ const config = {
           attributes: false
         }
       }
-    ]
+    ],
+    '@typescript-eslint/quotes': ['error', 'single'],
   }
 };
 
