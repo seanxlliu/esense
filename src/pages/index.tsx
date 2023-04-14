@@ -51,10 +51,12 @@ const Home: NextPage = () => {
         </h2>
 
         {session?.user ? (
-          // welcome & blog posts
           <div className="flex flex-col">
             <Welcome user={session.user} />
             <section className="mt-10"></section>
+            <Link href="/playground" className="rounded-lg mx-auto border px-4 py-2">
+              Playground
+            </Link>
           </div>
         ) : (
           // if not logged in
